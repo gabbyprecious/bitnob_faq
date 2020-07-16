@@ -2,9 +2,8 @@ from django.db import models
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from faq.models import Faq
 
-# from faq.models import Faq, status_choices, A, U
+from faq.models import Faq, Status
 from faq.serializers import FaqSerializer
 
 
