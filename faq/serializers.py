@@ -1,19 +1,13 @@
 from rest_framework import serializers
-from faq.models import Faq
 
-# from faq.models import Faq, status_choices, A, U
-
-A = "ACTIVE"
-U = "UNACTIVE"
-
-status_choices = [("A", ("active")), ("U", ("unactive"))]
+from faq.models import Faq, Status
 
 
 class FaqSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     question = serializers.CharField(required=False, allow_blank=True, max_length=100)
     answer = serializers.CharField(required=False, allow_blank=True, max_length=100)
-    status = serializers.ChoiceField(choices=status_choices, default=A)
+    status = serializers.ChoiceField(choices=Status.choices, default=Status.ACTIVE)
 
     def create(self, validated_data):
         """
