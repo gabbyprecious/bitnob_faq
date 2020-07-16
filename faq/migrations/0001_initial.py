@@ -7,17 +7,31 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Faq',
+            name="Faq",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('question', models.CharField(max_length=100)),
-                ('answer', models.CharField(max_length=100)),
-                ('status', models.CharField(choices=[('A', 'active'), ('U', 'unactive')], default='ACTIVE', max_length=8)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("question", models.CharField(max_length=100)),
+                ("answer", models.CharField(max_length=100)),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[("A", "active"), ("U", "unactive")],
+                        default="ACTIVE",
+                        max_length=8,
+                    ),
+                ),
             ],
         ),
     ]

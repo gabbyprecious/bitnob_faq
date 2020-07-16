@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from faq.models import Faq
+
 # from faq.models import Faq, status_choices, A, U
 
 A = "ACTIVE"
